@@ -22,3 +22,24 @@
   num1 = [1,2,3]
   num1.insert(1, 4) # result : num1 = [1,4,2,3]
   ```
+---
+
+#### 2. itertools
+  - combinations(list, 갯수) : 조합을 표현할 때 사용, 한 리스트에서 중복을 허용하지 않고 모든 경우의 수 구해줌 (반환되는 항목 수 : n!/r!/(n-r)!
+  ``` python
+  from itertools import combinations
+  num = [1,2,3]
+  print(list(combinations(num, 2)) # num에서 2개의 원소를 사용한 중복되지 않는 모든 경우의 수 출력
+  ```
+  - permutations : 순열을 표현할 때 사용, 한 리스트에서 중복을 허용하는 모든 경우의 수 구해줌 (반환되는 항목 수 : n!/r!)
+  ``` python
+  from itertools import permutations
+  num = [1,2,3]
+  print(list(permutations(num, 2)) # num에서 2개의 원소를 사용한 중복되는 모든 경우의 수 출력
+  ```
+  - product : 데카르트의 곱, 두 개 이상의 리스트의 모든 조합을 구해줌
+  ``` python
+  from itertools import product
+  num = [(1,-1), (2,-2), (3,-3)]
+  print(list(product(*num))) # ex) [(1,2,3),(1,2,-3),(1,-2,3), .....]
+  ```
