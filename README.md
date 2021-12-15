@@ -43,3 +43,29 @@
   num = [(1,-1), (2,-2), (3,-3)]
   print(list(product(*num))) # ex) [(1,2,3),(1,2,-3),(1,-2,3), .....]
   ```
+  
+#### 3. collections
+  - Counter : 딕셔너리 내에서 아이템의 발생 빈도를 카운트해서 저장
+  ``` python
+  from collections import Counter
+  
+  example = ['A', 'B', 'B', 'C', 'C', 'D', 'A']
+  counter = Counter(example)
+  print(counter) # result : {'A':2, 'B':2, 'C':2, 'D':1}
+  
+  counter.update(['C', 'D'])
+  print(counter) # result : {'A':2, 'B':2, 'C':3, 'D':2}
+  
+  print(list(counter.elements())) # result : ['A', 'A', 'B', 'B', 'C', 'C', 'C', 'D', 'D'] * 이때 순서는 랜덤
+  
+  print(counter.most_common(2)) # counter 중에서 가장 빈도수가 높은 n개의 요소를 튜플로 반환
+                                # result : [('C', 3), ('A', 2)]
+  ```
+
+#### 추가 공부
+  - 딕셔너리 value기준으로 가장 큰 key 찾기
+  ``` python
+  exam_dict = {"a":1,"b":5,"c":2,"d":4}
+  
+  print(max(exam_dict, key=exam_dict.get)) # result : "b"
+  ```
